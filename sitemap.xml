@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2019-06-13T15:42:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/</loc>
+    <lastmod>2019-06-13T14:35:25+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://darrengeek.github.io/2019/06/13/first/</loc>
     <lastmod>2019-06-13T12:01:13+08:00</lastmod>
   </url>
@@ -13,7 +23,20 @@
   </url>
   
   <url>
+    <loc>https://darrengeek.github.io/categories/blog/</loc>
+    <lastmod>2019-06-13T15:42:32+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://darrengeek.github.io/tags/blog/</loc>
+    <lastmod>2019-06-13T15:42:32+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://darrengeek.github.io/categories/</loc>
+    <lastmod>2019-06-13T15:42:32+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -25,19 +48,19 @@
   
   <url>
     <loc>https://darrengeek.github.io/</loc>
-    <lastmod>2019-06-13T12:01:13+08:00</lastmod>
+    <lastmod>2019-06-13T15:42:32+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://darrengeek.github.io/tags/hugo/</loc>
+    <lastmod>2019-06-13T15:42:32+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://darrengeek.github.io/post/</loc>
-    <lastmod>2019-06-13T12:01:13+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://darrengeek.github.io/categories/subcategory/</loc>
-    <lastmod>2019-06-13T12:01:13+08:00</lastmod>
+    <lastmod>2019-06-13T15:42:32+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -55,7 +78,7 @@
   
   <url>
     <loc>https://darrengeek.github.io/tags/</loc>
-    <lastmod>2019-06-13T12:01:13+08:00</lastmod>
+    <lastmod>2019-06-13T15:42:32+08:00</lastmod>
     <priority>0</priority>
   </url>
   

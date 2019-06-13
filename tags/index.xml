@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Darrengeek Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 13 Jun 2019 12:01:13 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jun 2019 15:42:32 +0800</lastBuildDate>
     
 	<atom:link href="https://darrengeek.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blog</title>
+      <link>https://darrengeek.github.io/tags/blog/</link>
+      <pubDate>Thu, 13 Jun 2019 15:42:32 +0800</pubDate>
+      
+      <guid>https://darrengeek.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://darrengeek.github.io/tags/hugo/</link>
+      <pubDate>Thu, 13 Jun 2019 15:42:32 +0800</pubDate>
+      
+      <guid>https://darrengeek.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Tag1</title>

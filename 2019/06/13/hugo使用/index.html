@@ -7,20 +7,40 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.50 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Darrengeek">
-<meta name="keywords" content="">
-<meta name="description" content="Hugo tranquilpeak theme demo">
+<meta name="keywords" content="tech">
+<meta name="description" content="">
 
 
-<meta property="og:description" content="Hugo tranquilpeak theme demo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Posts">
-<meta name="twitter:title" content="Posts">
-<meta property="og:url" content="https://darrengeek.github.io/post/">
-<meta property="twitter:url" content="https://darrengeek.github.io/post/">
+<meta property="og:description" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hugo使用">
+<meta name="twitter:title" content="Hugo使用">
+<meta property="og:url" content="https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/">
+<meta property="twitter:url" content="https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/">
 <meta property="og:site_name" content="Darrengeek Blog">
-<meta property="og:description" content="Hugo tranquilpeak theme demo">
-<meta name="twitter:description" content="Hugo tranquilpeak theme demo">
+<meta property="og:description" content="">
+<meta name="twitter:description" content="">
 <meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2019-06-13T15:42:32">
+  
+  
+    <meta property="article:modified_time" content="2019-06-13T15:42:32">
+  
+  
+  
+    
+      <meta property="article:section" content="blog">
+    
+  
+  
+    
+      <meta property="article:tag" content="hugo">
+    
+      <meta property="article:tag" content="blog">
+    
+  
 
 
 <meta name="twitter:card" content="summary">
@@ -39,16 +59,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/951b1c71a2d3d7a869c8352a284caac3?s=640">
 
 
-    <title>Posts</title>
+    <title>Hugo使用</title>
 
     <link rel="icon" href="https://darrengeek.github.io/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://darrengeek.github.io/post/index.xml">
-    
 
     
 
-    <link rel="canonical" href="https://darrengeek.github.io/post/">
+    <link rel="canonical" href="https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -72,7 +90,7 @@
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="2">
+      <header id="header" data-behavior="5">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://darrengeek.github.io/">Darrengeek Blog</a>
@@ -92,7 +110,7 @@
   
 </header>
 
-      <nav id="sidebar" data-behavior="2">
+      <nav id="sidebar" data-behavior="5">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -202,35 +220,20 @@
 
       
 
-      <div id="main" data-behavior="2"
+      <div id="main" data-behavior="5"
         class="
                hasCoverMetaIn
                ">
-        <section class="postShorten-group main-content-wrap">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
           
           
-            
+            <div class="post-header main-content-wrap text-left">
   
-    
-      
-        
-      
-    
+    <h1 class="post-title" itemprop="headline">
+      Hugo使用
+    </h1>
   
-
-
   
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/">
-          Hugo使用
-        </a>
-      </h1>
-      
   <div class="postShorten-meta post-meta">
     
       <time itemprop="datePublished" datetime="2019-06-13T15:42:32&#43;08:00">
@@ -255,148 +258,123 @@
 
   </div>
 
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p></p>
-      
-      <p>
-        <a href="https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
+</div>
           
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p></p>
+
+<p>博客文件，通常放在 content/post 目录中</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c">#创建</span><span class="w">
+</span><span class="w"></span>hugo<span class="w"> </span>new<span class="w"> </span>post/my-first-blog.md</code></pre></div>
+<h2 id="编译静态网站">编译静态网站</h2>
+
+<p>Hugo 在构建之前不会移除生成的文件。一个简单的解决方法是对开发环境和生产环境使用不同的目录。
+可以指定单独的目录（例如 dev/）来启动构建草稿内容的服务器（有助于编辑）:
+hugo server -wDs ~/Code/hugo/docs -d dev</p>
+
+<p>内容完成后，可以使用默认的 public/ 目录。此时会忽略所有标记为 draft: false 的文件：
+hugo -s ~/Code/hugo/docs</p>
+
+<p>最终我们需要的是静态的 HTML 文件。&ndash;theme 选项指定主题，&ndash;baseUrl 指定了项目的网站。最终静态文件生成在 public 目录中：
+hugo &ndash;theme=hugo-bootstrap &ndash;baseUrl=&ldquo;<a href="https://blog.kikakika.com&quot;">https://blog.kikakika.com&quot;</a></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
             
-  
-    
-      
-        
-      
-    
-  
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://darrengeek.github.io/tags/hugo/">hugo</a>
 
+  <a class="tag tag--primary tag--small" href="https://darrengeek.github.io/tags/blog/">blog</a>
 
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/">
-          使用hugo博客搭建流程
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-06-13T14:35:25&#43;08:00">
-        
-  
-  
-  
-  
-    2019年6月13日 14时35分25秒
-  
-
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://darrengeek.github.io/categories/blog">blog</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p></p>
-      
-      <p>
-        <a href="https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
+                  </div>
+                
+              
             
+            <div class="post-actions-wrap">
   
-    
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/" data-tooltip="使用hugo博客搭建流程">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
       
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
         
       
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://darrengeek.github.io/2019/06/13/first/">
-          First
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
         </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-06-13T12:01:13&#43;08:00">
-        
+      </li>
+    </ul>
   
-  
-  
-  
-    2019年6月13日 12时01分13秒
-  
+</div>
 
-      </time>
-    
-    
-  
-  
-    <span>发布在</span>
-    
-      <a class="category-link" href="https://darrengeek.github.io/categories/category">category</a>, 
-    
-      <a class="category-link" href="https://darrengeek.github.io/categories/blog">blog</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        This is my first post
-      
-      <p>
-        <a href="https://darrengeek.github.io/2019/06/13/first/" class="postShorten-excerpt_link link">阅读全文</a>
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-          
-          
-
-        </section>
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2019 <a href="https://github.com/darrengeek">darrengeek</a>. All Rights Reserved
@@ -404,6 +382,102 @@
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/" data-tooltip="使用hugo博客搭建流程">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="5">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdarrengeek.github.io%2F2019%2F06%2F13%2Fhugo%25E4%25BD%25BF%25E7%2594%25A8%2F">
+          <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fdarrengeek.github.io%2F2019%2F06%2F13%2Fhugo%25E4%25BD%25BF%25E7%2594%25A8%2F">
+          <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fdarrengeek.github.io%2F2019%2F06%2F13%2Fhugo%25E4%25BD%25BF%25E7%2594%25A8%2F">
+          <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -562,6 +636,32 @@ $(document).ready(function() {
 });
 </script>
 
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/darrengeek.github.io\/2019\/06\/13\/hugo%E4%BD%BF%E7%94%A8\/';
+          
+            this.page.identifier = '\/2019\/06\/13\/hugo%E4%BD%BF%E7%94%A8\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
 
 
 
