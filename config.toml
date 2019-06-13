@@ -95,7 +95,7 @@ pygmentsStyle = "fruity"
   identifier = "stackoverflow"
   name = "Stack Overflow"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-stack-overflow\"></i>"
-  url = "https://stackoverflow.com/users/636472/kakawait"
+  url = "https://stackoverflow.com/users/636472/darrengeek"
 
 [[menu.misc]]
   weight = 1
@@ -221,5 +221,5 @@ pygmentsStyle = "fruity"
   #   url = "/#about"
 
   # Customize copyright value "© 2017 <CUSTOMIZATION>. All Rights Reserved"
-  # [params.footer]
-  #   copyright = "<a href=\"https://github.com/kakawait\">kakawait</a>"
+  [params.footer]
+    copyright = "<a href=\"https://github.com/darrengeek\">darrengeek</a>"
