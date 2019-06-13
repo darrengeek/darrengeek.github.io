@@ -23,13 +23,13 @@
   </url>
   
   <url>
-    <loc>https://darrengeek.github.io/categories/blog/</loc>
+    <loc>https://darrengeek.github.io/tags/blog/</loc>
     <lastmod>2019-06-13T15:42:32+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://darrengeek.github.io/tags/blog/</loc>
+    <loc>https://darrengeek.github.io/categories/blog/</loc>
     <lastmod>2019-06-13T15:42:32+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -37,12 +37,6 @@
   <url>
     <loc>https://darrengeek.github.io/categories/</loc>
     <lastmod>2019-06-13T15:42:32+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://darrengeek.github.io/categories/category/</loc>
-    <lastmod>2019-06-13T12:01:13+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -61,18 +55,6 @@
   <url>
     <loc>https://darrengeek.github.io/post/</loc>
     <lastmod>2019-06-13T15:42:32+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://darrengeek.github.io/tags/tag1/</loc>
-    <lastmod>2019-06-13T12:01:13+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://darrengeek.github.io/tags/tag2/</loc>
-    <lastmod>2019-06-13T12:01:13+08:00</lastmod>
     <priority>0</priority>
   </url>
   
