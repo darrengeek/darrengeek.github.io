@@ -6,10 +6,33 @@
     <description>Recent content in Posts on Darrengeek Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 13 Jun 2019 15:42:32 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 19 Jun 2019 14:58:38 +0800</lastBuildDate>
     
 	<atom:link href="https://darrengeek.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Test</title>
+      <link>https://darrengeek.github.io/2019/06/19/test/</link>
+      <pubDate>Wed, 19 Jun 2019 14:58:38 +0800</pubDate>
+      
+      <guid>https://darrengeek.github.io/2019/06/19/test/</guid>
+      <description> 测试图片 </description>
+    </item>
+    
+    <item>
+      <title>Elasticsearch&#43;kibana安装部署</title>
+      <link>https://darrengeek.github.io/2019/06/19/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Wed, 19 Jun 2019 14:48:21 +0800</pubDate>
+      
+      <guid>https://darrengeek.github.io/2019/06/19/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</guid>
+      <description>[TOC]
+准备安装环境 es建议安装在独立的系统账户下，这里我们创建es账户。 JAVA版本为1.8。 下载elasticsearch和kibana，注意两者版本号要严格保持一致。这里我们用6.7.1。
+$ cd /home/es $ wget https://artifacts.elastic.co/downloads/kibana/kibana-6.7.1-linux-x86_64.tar.gz $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.7.1.tar.gz $ tar -zxvf kibana-6.7.1-linux-x86_64.tar.gz $ tar -zxvf elasticsearch-6.7.1.tar.gz 配置启动 启动elasticsearch 修改es配置文件/home/es/elasticsearch-6.7.1/config/elasticsearch.yml
+# 官方自带推荐的默认配置，这里我们将几个关键配置显式定义 path.data: /home/es/data # 数据文件存放目录 path.logs: /home/es/logs # 日志存放目录 network.host: 192.168.1.212 http.port: 9200 启动elasticsearch
+$ cd /home/es/elasticsearch-6.7.1/ $ sh bin/elasticsearch 检测elasticsearch是否启动成功：
+浏览器访问：http://192.168.1.212:9200/ 或者： $ curl http://192.168.1.212:9200/ 输出以下内容表示ES已启动： { &amp;#34;name&amp;#34; : &amp;#34;uMMV8Hc&amp;#34;, &amp;#34;cluster_name&amp;#34; : &amp;#34;elasticsearch&amp;#34;, &amp;#34;cluster_uuid&amp;#34; : &amp;#34;JHaM0vXORy-In37Duldahg&amp;#34;, &amp;#34;version&amp;#34; : { &amp;#34;number&amp;#34; : &amp;#34;6.7.1&amp;#34;, &amp;#34;build_flavor&amp;#34; : &amp;#34;default&amp;#34;, &amp;#34;build_type&amp;#34; : &amp;#34;tar&amp;#34;, &amp;#34;build_hash&amp;#34; : &amp;#34;2f32220&amp;#34;, &amp;#34;build_date&amp;#34; : &amp;#34;2019-04-02T15:59:27.</description>
+    </item>
     
     <item>
       <title>Hugo使用</title>

@@ -8,37 +8,55 @@
 <meta name="generator" content="Hugo 0.50 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Darrengeek">
 <meta name="keywords" content="tech">
-<meta name="description" content="">
+<meta name="description" content="[TOC]
+准备安装环境 es建议安装在独立的系统账户下，这里我们创建es账户。 JAVA版本为1.8。 下载elasticsearch和kibana，注意两者版本号要严格保持一致。这里我们用6.7.1。
+$ cd /home/es $ wget https://artifacts.elastic.co/downloads/kibana/kibana-6.7.1-linux-x86_64.tar.gz $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.7.1.tar.gz $ tar -zxvf kibana-6.7.1-linux-x86_64.tar.gz $ tar -zxvf elasticsearch-6.7.1.tar.gz 配置启动 启动elasticsearch 修改es配置文件/home/es/elasticsearch-6.7.1/config/elasticsearch.yml
+# 官方自带推荐的默认配置，这里我们将几个关键配置显式定义 path.data: /home/es/data # 数据文件存放目录 path.logs: /home/es/logs # 日志存放目录 network.host: 192.168.1.212 http.port: 9200 启动elasticsearch
+$ cd /home/es/elasticsearch-6.7.1/ $ sh bin/elasticsearch 检测elasticsearch是否启动成功：
+浏览器访问：http://192.168.1.212:9200/ 或者： $ curl http://192.168.1.212:9200/ 输出以下内容表示ES已启动： { &#34;name&#34; : &#34;uMMV8Hc&#34;, &#34;cluster_name&#34; : &#34;elasticsearch&#34;, &#34;cluster_uuid&#34; : &#34;JHaM0vXORy-In37Duldahg&#34;, &#34;version&#34; : { &#34;number&#34; : &#34;6.7.1&#34;, &#34;build_flavor&#34; : &#34;default&#34;, &#34;build_type&#34; : &#34;tar&#34;, &#34;build_hash&#34; : &#34;2f32220&#34;, &#34;build_date&#34; : &#34;2019-04-02T15:59:27.">
 
 
-<meta property="og:description" content="">
+<meta property="og:description" content="[TOC]
+准备安装环境 es建议安装在独立的系统账户下，这里我们创建es账户。 JAVA版本为1.8。 下载elasticsearch和kibana，注意两者版本号要严格保持一致。这里我们用6.7.1。
+$ cd /home/es $ wget https://artifacts.elastic.co/downloads/kibana/kibana-6.7.1-linux-x86_64.tar.gz $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.7.1.tar.gz $ tar -zxvf kibana-6.7.1-linux-x86_64.tar.gz $ tar -zxvf elasticsearch-6.7.1.tar.gz 配置启动 启动elasticsearch 修改es配置文件/home/es/elasticsearch-6.7.1/config/elasticsearch.yml
+# 官方自带推荐的默认配置，这里我们将几个关键配置显式定义 path.data: /home/es/data # 数据文件存放目录 path.logs: /home/es/logs # 日志存放目录 network.host: 192.168.1.212 http.port: 9200 启动elasticsearch
+$ cd /home/es/elasticsearch-6.7.1/ $ sh bin/elasticsearch 检测elasticsearch是否启动成功：
+浏览器访问：http://192.168.1.212:9200/ 或者： $ curl http://192.168.1.212:9200/ 输出以下内容表示ES已启动： { &#34;name&#34; : &#34;uMMV8Hc&#34;, &#34;cluster_name&#34; : &#34;elasticsearch&#34;, &#34;cluster_uuid&#34; : &#34;JHaM0vXORy-In37Duldahg&#34;, &#34;version&#34; : { &#34;number&#34; : &#34;6.7.1&#34;, &#34;build_flavor&#34; : &#34;default&#34;, &#34;build_type&#34; : &#34;tar&#34;, &#34;build_hash&#34; : &#34;2f32220&#34;, &#34;build_date&#34; : &#34;2019-04-02T15:59:27.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用hugo博客搭建流程">
-<meta name="twitter:title" content="使用hugo博客搭建流程">
-<meta property="og:url" content="https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/">
-<meta property="twitter:url" content="https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/">
+<meta property="og:title" content="Elasticsearch&#43;kibana安装部署">
+<meta name="twitter:title" content="Elasticsearch&#43;kibana安装部署">
+<meta property="og:url" content="https://darrengeek.github.io/2019/06/19/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
+<meta property="twitter:url" content="https://darrengeek.github.io/2019/06/19/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
 <meta property="og:site_name" content="Darrengeek Blog">
-<meta property="og:description" content="">
-<meta name="twitter:description" content="">
+<meta property="og:description" content="[TOC]
+准备安装环境 es建议安装在独立的系统账户下，这里我们创建es账户。 JAVA版本为1.8。 下载elasticsearch和kibana，注意两者版本号要严格保持一致。这里我们用6.7.1。
+$ cd /home/es $ wget https://artifacts.elastic.co/downloads/kibana/kibana-6.7.1-linux-x86_64.tar.gz $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.7.1.tar.gz $ tar -zxvf kibana-6.7.1-linux-x86_64.tar.gz $ tar -zxvf elasticsearch-6.7.1.tar.gz 配置启动 启动elasticsearch 修改es配置文件/home/es/elasticsearch-6.7.1/config/elasticsearch.yml
+# 官方自带推荐的默认配置，这里我们将几个关键配置显式定义 path.data: /home/es/data # 数据文件存放目录 path.logs: /home/es/logs # 日志存放目录 network.host: 192.168.1.212 http.port: 9200 启动elasticsearch
+$ cd /home/es/elasticsearch-6.7.1/ $ sh bin/elasticsearch 检测elasticsearch是否启动成功：
+浏览器访问：http://192.168.1.212:9200/ 或者： $ curl http://192.168.1.212:9200/ 输出以下内容表示ES已启动： { &#34;name&#34; : &#34;uMMV8Hc&#34;, &#34;cluster_name&#34; : &#34;elasticsearch&#34;, &#34;cluster_uuid&#34; : &#34;JHaM0vXORy-In37Duldahg&#34;, &#34;version&#34; : { &#34;number&#34; : &#34;6.7.1&#34;, &#34;build_flavor&#34; : &#34;default&#34;, &#34;build_type&#34; : &#34;tar&#34;, &#34;build_hash&#34; : &#34;2f32220&#34;, &#34;build_date&#34; : &#34;2019-04-02T15:59:27.">
+<meta name="twitter:description" content="[TOC]
+准备安装环境 es建议安装在独立的系统账户下，这里我们创建es账户。 JAVA版本为1.8。 下载elasticsearch和kibana，注意两者版本号要严格保持一致。这里我们用6.7.1。
+$ cd /home/es $ wget https://artifacts.elastic.co/downloads/kibana/kibana-6.7.1-linux-x86_64.tar.gz $ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.7.1.tar.gz $ tar -zxvf kibana-6.7.1-linux-x86_64.tar.gz $ tar -zxvf elasticsearch-6.7.1.tar.gz 配置启动 启动elasticsearch 修改es配置文件/home/es/elasticsearch-6.7.1/config/elasticsearch.yml
+# 官方自带推荐的默认配置，这里我们将几个关键配置显式定义 path.data: /home/es/data # 数据文件存放目录 path.logs: /home/es/logs # 日志存放目录 network.host: 192.168.1.212 http.port: 9200 启动elasticsearch
+$ cd /home/es/elasticsearch-6.7.1/ $ sh bin/elasticsearch 检测elasticsearch是否启动成功：
+浏览器访问：http://192.168.1.212:9200/ 或者： $ curl http://192.168.1.212:9200/ 输出以下内容表示ES已启动： { &#34;name&#34; : &#34;uMMV8Hc&#34;, &#34;cluster_name&#34; : &#34;elasticsearch&#34;, &#34;cluster_uuid&#34; : &#34;JHaM0vXORy-In37Duldahg&#34;, &#34;version&#34; : { &#34;number&#34; : &#34;6.7.1&#34;, &#34;build_flavor&#34; : &#34;default&#34;, &#34;build_type&#34; : &#34;tar&#34;, &#34;build_hash&#34; : &#34;2f32220&#34;, &#34;build_date&#34; : &#34;2019-04-02T15:59:27.">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2019-06-13T14:35:25">
+    <meta property="article:published_time" content="2019-06-19T14:48:21">
   
   
-    <meta property="article:modified_time" content="2019-06-13T14:35:25">
+    <meta property="article:modified_time" content="2019-06-19T14:48:21">
   
-  
-  
-    
-      <meta property="article:section" content="blog">
-    
   
   
     
-      <meta property="article:tag" content="hugo">
+      <meta property="article:section" content="ELK">
     
-      <meta property="article:tag" content="blog">
+  
+  
+    
+      <meta property="article:tag" content="ELK">
     
   
 
@@ -59,14 +77,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/951b1c71a2d3d7a869c8352a284caac3?s=640">
 
 
-    <title>使用hugo博客搭建流程</title>
+    <title>Elasticsearch&#43;kibana安装部署</title>
 
     <link rel="icon" href="https://darrengeek.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/">
+    <link rel="canonical" href="https://darrengeek.github.io/2019/06/19/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -230,19 +248,19 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      使用hugo博客搭建流程
+      Elasticsearch&#43;kibana安装部署
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-06-13T14:35:25&#43;08:00">
+      <time itemprop="datePublished" datetime="2019-06-19T14:48:21&#43;08:00">
         
   
   
   
   
-    2019年6月13日 14时35分25秒
+    2019年6月19日 14时48分21秒
   
 
       </time>
@@ -252,7 +270,7 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://darrengeek.github.io/categories/blog">blog</a>
+      <a class="category-link" href="https://darrengeek.github.io/categories/elk">ELK</a>
     
   
 
@@ -262,222 +280,141 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p></p>
+              <p>
+[TOC]</p>
 
-<p>原文：<a href="https://yougg.github.io/2017/06/27/%E6%88%91%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/#">https://yougg.github.io/2017/06/27/%E6%88%91%E7%9A%84%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/#</a></p>
+<h1 id="准备安装环境">准备安装环境</h1>
 
-<ol>
-<li><p>根据GitHub静态博客向导: <a href="https://pages.github.com/">https://pages.github.com/</a><br />
-在GitHub创建名为 <strong>username</strong>.github.io 的空仓库<br />
-<strong>username</strong> 为自己的GitHub账号，此处我的账号为<code>yougg</code><br />
-如果之前已经创建过个人博客仓库，先备份一下：</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/yougg/yougg.github.io.git
-<span class="nb">cd</span> yougg.github.io
-git branch -m master old_master
-git push origin :master old_master</code></pre></div></li>
+<p>es建议安装在独立的系统账户下，这里我们创建es账户。
+JAVA版本为1.8。
+下载elasticsearch和kibana，注意两者版本号要严格保持一致。这里我们用6.7.1。</p>
+<div class="highlight"><pre class="chroma">$ cd /home/es
+$ wget https://artifacts.elastic.co/downloads/kibana/kibana-6.7.1-linux-x86_64.tar.gz
+$ wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.7.1.tar.gz
+$ tar -zxvf kibana-6.7.1-linux-x86_64.tar.gz
+$ tar -zxvf elasticsearch-6.7.1.tar.gz</pre></div>
+<h1 id="配置启动">配置启动</h1>
 
-<li><p>下载安装静态博客工具<a href="https://gohugo.io/">hugo</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 创建hugo工具目录
-</span><span class="c1"></span>mkdir -p ~/Downloads/hugo/
-<span class="nb">cd</span> <span class="nv">$_</span>
-<span class="c1"># 获取Hugo Linux 64bit最新版本安装包的URL, Windows需要更改包名Windows-64bit.zip
-</span><span class="c1"></span><span class="nv">hgpkg</span><span class="o">=</span><span class="k">$(</span>curl -ks -L<span class="s1">&#39;#&#39;</span> https://github.com/gohugoio/hugo/releases/latest <span class="p">|</span> awk -F <span class="s1">&#39;&#34;&#39;</span> <span class="s1">&#39;/Linux-64bit.tar.gz/{print &#34;https://github.com&#34;$2;exit}&#39;</span><span class="k">)</span>
-<span class="c1"># 使用curl命令下载最新版本安装包到本地
-</span><span class="c1"></span>curl -k -o <span class="k">$(</span>basename <span class="si">${</span><span class="nv">hgpkg</span><span class="si">}</span><span class="k">)</span> -L<span class="s1">&#39;#&#39;</span> <span class="si">${</span><span class="nv">hgpkg</span><span class="si">}</span>
-<span class="c1"># 或者使用wget命令下载
-</span><span class="c1"></span>wget --no-check-certificate <span class="si">${</span><span class="nv">hgpkg</span><span class="si">}</span></code></pre></div>
-<p>解压安装到本地，配置执行命令到PATH中</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">tar xzf <span class="k">$(</span>basename <span class="si">${</span><span class="nv">hgpkg</span><span class="si">}</span><span class="k">)</span>
-<span class="c1"># 建立执行文件软链接到PATH的一个路径中
-</span><span class="c1"></span>sudo unlink /usr/local/bin/hugo <span class="p">&amp;</span>&gt; /dev/null
-sudo ln -s ~/Downloads/hugo/hugo /usr/local/bin/hugo</code></pre></div>
-<p>执行hugo命令查看版本，确认是否安装成功</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hugo version</code></pre></div>
-<p>Debian/Ubuntu官方仓库已包含hugo(但是版本较旧)<br />
-使用下面一行命令安装hugo替代上面的流程</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt install hugo</code></pre></div></li>
+<h2 id="启动elasticsearch">启动elasticsearch</h2>
 
-<li><p>创建与配置博客工程</p>
+<p>修改es配置文件/home/es/elasticsearch-6.7.1/config/elasticsearch.yml</p>
+<div class="highlight"><pre class="chroma"># 官方自带推荐的默认配置，这里我们将几个关键配置显式定义
+path.data: /home/es/data # 数据文件存放目录
+path.logs: /home/es/logs # 日志存放目录
+network.host: 192.168.1.212
+http.port: 9200</pre></div>
+<p>启动elasticsearch</p>
+<div class="highlight"><pre class="chroma">$ cd /home/es/elasticsearch-6.7.1/
+$ sh bin/elasticsearch</pre></div>
+<p>检测elasticsearch是否启动成功：</p>
+<div class="highlight"><pre class="chroma">浏览器访问：http://192.168.1.212:9200/
+或者：
+$ curl http://192.168.1.212:9200/
 
-<p>创建博客站点，我的本地博客目录存放在<code>~/Documents/myblog/</code></p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ~/Documents/
-hugo new site myblog
-<span class="nb">cd</span> myblog
+输出以下内容表示ES已启动：
+{
+  &#34;name&#34; : &#34;uMMV8Hc&#34;,
+  &#34;cluster_name&#34; : &#34;elasticsearch&#34;,
+  &#34;cluster_uuid&#34; : &#34;JHaM0vXORy-In37Duldahg&#34;,
+  &#34;version&#34; : {
+    &#34;number&#34; : &#34;6.7.1&#34;,
+    &#34;build_flavor&#34; : &#34;default&#34;,
+    &#34;build_type&#34; : &#34;tar&#34;,
+    &#34;build_hash&#34; : &#34;2f32220&#34;,
+    &#34;build_date&#34; : &#34;2019-04-02T15:59:27.961366Z&#34;,
+    &#34;build_snapshot&#34; : false,
+    &#34;lucene_version&#34; : &#34;7.7.0&#34;,
+    &#34;minimum_wire_compatibility_version&#34; : &#34;5.6.0&#34;,
+    &#34;minimum_index_compatibility_version&#34; : &#34;5.0.0&#34;
+  },
+  &#34;tagline&#34; : &#34;You Know, for Search&#34;
+}</pre></div>
+<p>关闭es，官方没有提供关闭方案，我们直接kill进程</p>
+<div class="highlight"><pre class="chroma">$ ps -efj|grep elasticsearch
+# 把es相关的进程挨个Kill掉</pre></div>
+<h2 id="启动kibana">启动kibana</h2>
 
-<span class="c1"># 添加博客主题
-</span><span class="c1"></span>git clone https://github.com/kakawait/hugo-tranquilpeak-theme.git themes/hugo-tranquilpeak-theme
+<p>修改配置文件：/home/es/kibana-6.7.1-linux-x86_64/config/kibana.yml</p>
+<div class="highlight"><pre class="chroma">server.port: 5601 # 访问kibana时的ip/port
+server.host: &#34;192.168.1.212&#34;
+elasticsearch.hosts: [&#34;http://192.168.1.212:9200&#34;] # 显式指定ES
+logging.dest: /home/es/logs/kibana.log # 日志文件</pre></div>
+<p>启动kibana</p>
+<div class="highlight"><pre class="chroma">$ cd /home/es/kibana-6.7.1-linux-x86_64/
+$ ./bin/kibana &amp;</pre></div>
+<p>访问kibana，浏览器打开192.168.1.212:5601即可</p>
 
-<span class="c1"># 复制主题中的配置模板文件
-</span><span class="c1"></span>cp -f themes/hugo-tranquilpeak-theme/exampleSite/config.toml config.toml
+<p>关闭kibana</p>
+<div class="highlight"><pre class="chroma"># 找到后台的kibana进程得费点事
+$ ps -efj |grep src/cli
+es       11759  9289 11759  9289  0 10:35 pts/6    00:00:45 ./bin/../node/bin/node --no-warnings --max-http-header-size=65536 ./bin/../src/cli
+es       12068 11517 12067 11517  0 12:23 pts/7    00:00:00 grep --color=auto src/cli
+# 这个11759的就是kibana进程，我们Kill掉即可
+$ kill 11759</pre></div>
+<h1 id="使用示例">使用示例</h1>
 
-mkdir -p static/css static/js
-<span class="c1"># 导出一份语法高亮主题，参考：https://help.farbox.com/pygments.html
-</span><span class="c1"></span>hugo gen chromastyles --style<span class="o">=</span>fruity &gt; static/css/fruity.css
-sed -i <span class="s1">&#39;s/; background-color: #0f140f;//g&#39;</span> static/css/fruity.css</code></pre></div>
-<p>使用文本编辑器打开编辑配置文件</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vi config.toml</code></pre></div>
-<p>设置站点url根路径</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">baseurl</span> <span class="o">=</span> <span class="s">&#34;yougg.github.io&#34;</span></code></pre></div>
-<p>修改博客默认语言</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">languageCode</span> <span class="o">=</span> <span class="s">&#34;zh-cn&#34;</span>
-<span class="na">defaultContentLanguage</span> <span class="o">=</span> <span class="s">&#34;zh-cn&#34;</span></code></pre></div>
-<p>添加设置文章内容包含汉字</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">hasCJKLanguage</span> <span class="o">=</span> <span class="s">true</span></code></pre></div>
-<p>设置博客标题</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">title</span> <span class="o">=</span> <span class="s">&#34;Yougg Blog&#34;</span></code></pre></div>
-<p>设置博客主题风格</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">theme</span> <span class="o">=</span> <span class="s">&#34;hugo-tranquilpeak-theme&#34;</span></code></pre></div>
-<p>设置disqus评论系统用户名</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">disqusShortname</span> <span class="o">=</span> <span class="s">&#34;yougg&#34;</span></code></pre></div>
-<p>设置文章分页数量</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">paginate</span> <span class="o">=</span> <span class="s">10</span></code></pre></div>
-<p>启用emoji😄表情设置</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">enableEmoji</span> <span class="o">=</span> <span class="s">true</span></code></pre></div>
-<p>设置语法高亮</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">pygmentsCodeFences</span> <span class="o">=</span> <span class="s">true</span>
-<span class="na">pygmentsCodeFencesGuessSyntax</span> <span class="o">=</span> <span class="s">true</span>
-<span class="na">pygmentsUseClasses</span> <span class="o">=</span> <span class="s">true</span>
-<span class="na">pygmentsStyle</span> <span class="o">=</span> <span class="s">&#34;fruity&#34;</span></code></pre></div>
-<p>设置博客文章链接格式</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[permalinks]</span>
-  <span class="na">post</span> <span class="o">=</span> <span class="s">&#34;/:year/:month/:day/:slug/&#34;</span>
-<span class="c1"># 比默认的多添加了一个:day</span></code></pre></div>
-<p>设置作者相关信息</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[author]</span>
-  <span class="na">name</span> <span class="o">=</span> <span class="s">&#34;yougg&#34;</span>
-
-  <span class="na">bio</span> <span class="o">=</span> <span class="s">&#34;和咸鱼没有什么区别的偶尔写~~_不想写_~~博客的码农&#34;</span>
-
-  <span class="na">job</span> <span class="o">=</span> <span class="s">&#34;搬砖&#34;</span>
-
-  <span class="na">location</span> <span class="o">=</span> <span class="s">&#34;中国 深圳&#34;</span>
-
-  <span class="na">gravatarEmail</span> <span class="o">=</span> <span class="s">&#34;joe2qq@gmail.com&#34;</span>
-
-  <span class="na">picture</span> <span class="o">=</span> <span class="s">&#34;https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png&#34;</span>
-
-  <span class="c1"># twitter = &#34;&#34;</span></code></pre></div>
-<p>修改日期格式</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="k">[params]</span>
-  <span class="na">dateFormat</span> <span class="o">=</span> <span class="s">&#34;2006年1月2日 15时04分05秒&#34;</span>
-<span class="c1"># 必须满足Golang的日期格式：零纳秒 一月二日三点四分五秒六年七区八星九零</span></code></pre></div>
-<p>修改侧边导航栏默认行为</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">sidebarBehavior</span> <span class="o">=</span> <span class="s">2</span></code></pre></div>
-<!--添加github的语法高亮主题  
-下载[github.css](https://raw.githubusercontent.com/isagalaev/highlight.js/master/src/styles/github.css)、[highlight.min.js](http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js)和[go.min.js](http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js)分别存放到工程的`static/css/`和`static/js/`目录中，然后将路径配置到自定义的选项中-->
-
-<p>引用语法高亮主题CSS文件</p>
-<div class="highlight"><pre class="chroma"><code class="language-ini" data-lang="ini"><span class="na">customCSS</span> <span class="o">=</span> <span class="s">[&#34;css/fruity.css&#34;]</span></code></pre></div>
-<p>以上配置项修改完成保存后退出</p>
-
-<!--
-```bash
-# 修改博客的默认设置：根路径、语言、标题
-cat themes/hugo-tranquilpeak-theme/exampleSite/config.toml > config.toml
-sed -i 's/baseurl = ""/baseurl = "yougg.github.io"/;
-s/en-us/zh-cn/g;
-s/title = "Hugo tranquilpeak theme"/title = "Yougg Blog"/;
-s/disqusShortname = "hugo-tranquilpeak-theme"/disqusShortname = "yougg"/;
-s/post = "\/:year\/:month\/:slug\/"/post = "\/:year\/:month\/:day\/:slug\/"/;
-s/name = "Firstname Lastname"/name = "yougg"/;
-s/job = "Your job title"/job = "Software Developer"/;
-s/location = "France"/location = "China"/;
-s/gravatarEmail = "thibaud.lepretre@gmail.com"/gravatarEmail = "joe2qq@gmail.com"/;
-s/url = "https:\/\/github.com\/kakawait"/url = "https:\/\/github.com\/yougg"/;
-s/sidebarBehavior = 1/sidebarBehavior = 2/' config.toml
-```
---></li>
-
-<li><p>编写和配置文章</p>
+<p>操作ES有3种方式：</p>
 
 <ul>
-<li><p>编辑默认的文档模板<code>archetypes/default.md</code></p>
-
-<pre>
-<code class="language-markdown codeblock hljs" data-lang="markdown"><span class="header">---</span>
-Categories: []
-Description: ""
-Tags: []
-title: "{{ replace .TranslationBaseName "-" " " | title }}"
-date: {{ .Date }}
-draft: false
-<span class="header">---</span>
-
-# Title
-
-Content
-
-<span class="header">---</span>
-
-_**参考链接：**_
-
-<span class="deletion">- [name](link)</span>
-</code>
-</pre></li>
+<li>kibana控制台（Dev Tools）</li>
+<li>Http + json</li>
+<li>api接口</li>
 </ul>
 
-<p>draft 表示是否是草稿，编辑完成后请将其改为 false，否则编译会跳过草稿文件</p>
+<p>ES支持以下命令：</p>
 
 <ul>
-<li><p>新建一篇文章，并添加一些内容到文章</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">hugo new post/first.md
-<span class="nb">echo</span> <span class="s2">&#34;This is my first post&#34;</span> &gt;&gt; content/post/first.md</code></pre></div></li>
-
-<li><p>启动hugo服务</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 本地启动服务：指定监听地址、端口，访问根路径和主题，包含草稿内容
-</span><span class="c1">#hugo server --bind 127.0.0.1 -p 1313 -b http://127.0.0.1:1313/ --buildDrafts -v
-</span><span class="c1"></span>hugo server --buildDrafts
-#hugo server 命令可以使用 hugo 内置服务器调试预览博客。--theme 选项可以指定主题，--watch 选项可以在修改文件后自动刷新浏览器，--buildDrafts 包括标记为草稿（draft）的内容</code></pre></div></li>
-
-<li><p>通过浏览器中访问主页 <a href="http://127.0.0.1:1313/">http://127.0.0.1:1313/</a><br />
-访问 <a href="http://127.0.0.1:1313/post/first">http://127.0.0.1:1313/post/first</a> 查看文章内容<br />
-按Ctrl+C停止hugo服务<br />
-根据浏览器中查看的效果，按自己喜好修改博客的默认字体</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sed -i <span class="s1">&#39;s/Merriweather,serif/youyuan,Merriweather,serif/g;
-</span><span class="s1">s/&#34;Open Sans&#34;,sans-serif/youyuan,&#34;Open Sans&#34;,sans-serif/g;
-</span><span class="s1">s/font-size:3.7rem/font-size:3.7rem;text-align:center;/g;
-</span><span class="s1">s/.main-content-wrap{display:block;max-width:750px;/.main-content-wrap{display:block;max-width:1000px;/g&#39;</span> themes/hugo-tranquilpeak-theme/static/css/*.css</code></pre></div></li>
-</ul></li>
-
-<li><p>发布静态博客到GitHub Pages</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 初始化本地git仓库
-</span><span class="c1"></span><span class="nb">cd</span> ~/Documents/myblog/
-git init
-<span class="nb">echo</span> <span class="s2">&#34;/public/&#34;</span> &gt;&gt; .gitignore
-<span class="nb">echo</span> <span class="s2">&#34;/themes/&#34;</span> &gt;&gt; .gitignore
-git add --all
-git commit -m <span class="s2">&#34;Initial commit&#34;</span>
-git branch -m master <span class="nb">source</span>
-
-<span class="c1"># 本地仓库关联GitHub上面的个人博客仓库
-</span><span class="c1"></span>git remote add origin https://github.com/yougg/yougg.github.io.git
-<span class="c1"># 将本地博客的源码推送到GitHub仓库的source分支
-</span><span class="c1"></span>git push -u origin <span class="nb">source</span>
-git push origin refs/heads/source:source
-
-<span class="c1"># 更新草稿状态
-</span><span class="c1"></span>hugo undraft content/post/first.md
-<span class="c1"># 生成静态网站内容
-</span><span class="c1"></span>hugo
-
-<span class="c1"># 将生成的静态页面推送到master分支
-</span><span class="c1"></span><span class="nb">cd</span> public
-git init
-git remote add origin https://github.com/yougg/yougg.github.io.git
-git add --all
-git commit -m <span class="s2">&#34;first post added&#34;</span>
-git push -f origin master</code></pre></div></li>
-</ol>
-
-<hr />
-
-<p><em><strong>参考链接：</strong></em></p>
-
-<ul>
-<li><a href="http://tonybai.com/2015/09/23/intro-of-gohugo/">使用Hugo搭建静态站点</a></li>
-<li><a href="https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md">Tranquilpeak User documentation</a></li>
-<li><a href="https://gohugo.io/getting-started/">Hugo document</a></li>
+<li>GET：获取请求对象的当前状态。</li>
+<li>POST：改变对象的当前状态。</li>
+<li>PUT：创建一个对象。</li>
+<li>DELETE：销毁对象。</li>
+<li>HEAD：请求获取对象的基础信息。</li>
 </ul>
+
+<p>接下来我们提供几组在kibana dev tools上操作的示例：</p>
+<div class="highlight"><pre class="chroma"># 获取指定文档
+GET /dataproduct/productinfo/1/
+
+# 搜索&#34;masterName&#34;字段包含&#34;蛋糕&#34;关键字的文档
+GET dataproduct/_search
+{
+  &#34;query&#34;: {
+    &#34;match&#34;: {
+      &#34;basicInfo.basicInfo.masterName&#34;: &#34;蛋糕&#34;
+    }
+  }
+}
+
+# 删除文档
+DELETE /dataproduct/productinfo/1
+
+# 添加一个文档
+PUT /dataproduct/productinfo/1
+{
+  &#34;basicInfo&#34;: {
+    &#34;basicInfo&#34;: {
+      &#34;productId&#34;: 1,
+      &#34;masterName&#34;: &#34;四季芝士蛋糕(四拼)&#34;,
+      &#34;slaveName&#34;: &#34;草莓 蓝莓 芝士 巧克力 如四季流转各具风味&#34;,
+    },
+    &#34;categoryId&#34;: 105,
+    &#34;attrTypeIdList&#34;: [
+      1,
+      2,
+      3
+    ]
+  }
+}
+
+# 修改文档字段basicInfo.categoryId加100
+POST /dataproduct/productinfo/1/_update
+{
+  &#34;script&#34;: {
+    &#34;inline&#34;:&#34;ctx._source.basicInfo.categoryId += 100&#34;
+  }
+}</pre></div>
+<p>如果是HTTP方式，在上述控制台指令上增加curl及ip:port即可，比如：</p>
+<div class="highlight"><pre class="chroma">curl GET 192.168.1.212:9200/dataproduct/productinfo/1/</pre></div>
               
             </div>
           </div>
@@ -489,9 +426,7 @@ git push -f origin master</code></pre></div></li>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://darrengeek.github.io/tags/hugo/">hugo</a>
-
-  <a class="tag tag--primary tag--small" href="https://darrengeek.github.io/tags/blog/">blog</a>
+  <a class="tag tag--primary tag--small" href="https://darrengeek.github.io/tags/elk/">ELK</a>
 
                   </div>
                 
@@ -504,7 +439,7 @@ git push -f origin master</code></pre></div></li>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/" data-tooltip="Hugo使用">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://darrengeek.github.io/2019/06/19/test/" data-tooltip="Test">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -512,7 +447,7 @@ git push -f origin master</code></pre></div></li>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://darrengeek.github.io/2019/06/13/first/" data-tooltip="First">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/" data-tooltip="Hugo使用">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -530,19 +465,19 @@ git push -f origin master</code></pre></div></li>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://darrengeek.github.io/2019/06/19/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://darrengeek.github.io/2019/06/19/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://darrengeek.github.io/2019/06/19/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -590,7 +525,7 @@ git push -f origin master</code></pre></div></li>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/" data-tooltip="Hugo使用">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://darrengeek.github.io/2019/06/19/test/" data-tooltip="Test">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -598,7 +533,7 @@ git push -f origin master</code></pre></div></li>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://darrengeek.github.io/2019/06/13/first/" data-tooltip="First">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/" data-tooltip="Hugo使用">
               
                   <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
                   <i class="fa fa-angle-right"></i>
@@ -616,19 +551,19 @@ git push -f origin master</code></pre></div></li>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://darrengeek.github.io/2019/06/19/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://darrengeek.github.io/2019/06/19/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://darrengeek.github.io/2019/06/13/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://darrengeek.github.io/2019/06/19/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -658,19 +593,19 @@ git push -f origin master</code></pre></div></li>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdarrengeek.github.io%2F2019%2F06%2F13%2F%25E4%25BD%25BF%25E7%2594%25A8hugo%25E5%258D%259A%25E5%25AE%25A2%25E6%2590%25AD%25E5%25BB%25BA%25E6%25B5%2581%25E7%25A8%258B%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdarrengeek.github.io%2F2019%2F06%2F19%2Felasticsearch-kibana%25E5%25AE%2589%25E8%25A3%2585%25E9%2583%25A8%25E7%25BD%25B2%2F">
           <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fdarrengeek.github.io%2F2019%2F06%2F13%2F%25E4%25BD%25BF%25E7%2594%25A8hugo%25E5%258D%259A%25E5%25AE%25A2%25E6%2590%25AD%25E5%25BB%25BA%25E6%25B5%2581%25E7%25A8%258B%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fdarrengeek.github.io%2F2019%2F06%2F19%2Felasticsearch-kibana%25E5%25AE%2589%25E8%25A3%2585%25E9%2583%25A8%25E7%25BD%25B2%2F">
           <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fdarrengeek.github.io%2F2019%2F06%2F13%2F%25E4%25BD%25BF%25E7%2594%25A8hugo%25E5%258D%259A%25E5%25AE%25A2%25E6%2590%25AD%25E5%25BB%25BA%25E6%25B5%2581%25E7%25A8%258B%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fdarrengeek.github.io%2F2019%2F06%2F19%2Felasticsearch-kibana%25E5%25AE%2589%25E8%25A3%2585%25E9%2583%25A8%25E7%25BD%25B2%2F">
           <i class="fa fa-google-plus"></i><span>分享到 Google&#43;</span>
         </a>
       </li>
@@ -880,9 +815,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/darrengeek.github.io\/2019\/06\/13\/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B\/';
+          this.page.url = 'https:\/\/darrengeek.github.io\/2019\/06\/19\/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2\/';
           
-            this.page.identifier = '\/2019\/06\/13\/%E4%BD%BF%E7%94%A8hugo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B\/'
+            this.page.identifier = '\/2019\/06\/19\/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2\/'
           
         };
         (function() {

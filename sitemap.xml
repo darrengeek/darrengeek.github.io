@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://darrengeek.github.io/2019/06/19/test/</loc>
+    <lastmod>2019-06-19T14:58:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://darrengeek.github.io/2019/06/19/elasticsearch-kibana%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2019-06-19T14:48:21+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://darrengeek.github.io/2019/06/13/hugo%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2019-06-13T15:42:32+08:00</lastmod>
   </url>
@@ -41,8 +51,26 @@
   </url>
   
   <url>
+    <loc>https://darrengeek.github.io/categories/category/</loc>
+    <lastmod>2019-06-19T14:58:38+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://darrengeek.github.io/</loc>
-    <lastmod>2019-06-13T15:42:32+08:00</lastmod>
+    <lastmod>2019-06-19T14:58:38+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://darrengeek.github.io/tags/elk/</loc>
+    <lastmod>2019-06-19T14:48:21+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://darrengeek.github.io/categories/elk/</loc>
+    <lastmod>2019-06-19T14:48:21+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -54,7 +82,13 @@
   
   <url>
     <loc>https://darrengeek.github.io/post/</loc>
-    <lastmod>2019-06-13T15:42:32+08:00</lastmod>
+    <lastmod>2019-06-19T14:58:38+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://darrengeek.github.io/tags/tag1/</loc>
+    <lastmod>2019-06-19T14:58:38+08:00</lastmod>
     <priority>0</priority>
   </url>
   
